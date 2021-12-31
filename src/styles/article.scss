@@ -1,0 +1,37 @@
+.article_container {
+    padding: 0 50px;
+    .bookmark_section {
+        width: 195px;
+        margin: 24px 20px 0px 0;
+        color: #fff;
+        background: #09357b;
+        padding: 7px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        span {
+            margin-left: 15px;
+        }
+    }
+    .add_bookmark {
+        background: rgba(76, 250, 76, 0.753);
+        text-align: center;
+        padding: 10px 0;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        position: absolute;
+        width: 92%;
+        top: 520px;
+    }
+    .remove_bookmark {
+        background: red;
+        text-align: center;
+        padding: 10px 0;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        position: absolute;
+        width: 92%;
+        top: 520px;
+    }
+}

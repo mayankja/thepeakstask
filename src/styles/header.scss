@@ -1,0 +1,33 @@
+.container_header {
+    background: #09357b;
+    display: flex;
+    align-items: baseline;
+    padding: 0 50px;
+    z-index: 99;
+    h1 {
+        a {
+            color: #fff;
+            text-decoration:none
+        }
+    }
+    .search_section {
+        margin: 0 0 0 auto;
+        padding-bottom: 5px;
+        border-bottom: 2px solid white;
+        z-index: 999;
+        input {
+            width: 300px;
+            border-radius: 2px;
+            border: none;
+            background: transparent;
+        }
+        input:focus{
+            outline: none;
+        }
+        .search_icon {
+            color: white;
+            font-size: 25px;
+            padding: 0px 24px;
+        }
+    }
+}

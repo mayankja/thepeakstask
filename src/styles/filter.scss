@@ -1,0 +1,28 @@
+.filter_container {
+    display: flex;
+    margin: 20px 0;
+    h1 {
+        font-size: 40px;
+        margin: 0;
+    }
+    .filter_section {
+        display: flex;
+        margin: 0 0 0 auto;
+        .bookmark_section {
+            margin: 24px 20px 0px 0;
+            color: #fff;
+            background: #09357b;
+            padding: 7px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            span {
+                margin-left: 15px;
+            }
+        }
+        select {
+            border: none;
+            border-bottom: solid 2px #bcbcbc;
+            width: 150px;
+        }
+    }
+}
