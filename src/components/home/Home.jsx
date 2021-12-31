@@ -54,20 +54,23 @@ export default class Home extends Component {
             </div>
         }
         return (
-            <div className='home_container'>
-                <Filter
-                    handleFilter = {(filter_by) => this.handleFilter(filter_by)}
-                    handleViewBookmark = {handleViewBookmark}
-                    view_bookmark={view_bookmark}
-                    search_query={search_query}
-                    filter_by={filter_by}
-                />
-                <Articles
-                    filter_by={filter_by}
-                    bookmarked_articles={bookmarked_articles}
-                    view_bookmark={view_bookmark}
-                    response_data={response_data}
-                />
+            <div>
+                <div className='home_container'>
+                    <Filter
+                        handleFilter = {(filter_by) => this.handleFilter(filter_by)}
+                        handleViewBookmark = {handleViewBookmark}
+                        view_bookmark={view_bookmark}
+                        search_query={search_query}
+                        filter_by={filter_by}
+                    />
+                    <Articles
+                        filter_by={filter_by}
+                        bookmarked_articles={bookmarked_articles}
+                        view_bookmark={view_bookmark}
+                        response_data={response_data}
+                    />
+                </div>
+                <div className='footer_section'/>
             </div>
         )
     }

@@ -42,19 +42,9 @@ class Article extends Component {
             });
     };
 
-    addBookmark = (article_details) => {
+    handleBookmark = (article_details, type) => {
         this.setState({
-            showStatus: 'add'
-        })
-        this.props.handleBookmark(article_details);
-        setTimeout(() => this.setState({
-            showStatus: ''
-        }), 3000);
-    }
-
-    removeBookmark = (article_details) => {
-        this.setState({
-            showStatus: 'remove'
+            showStatus: type
         })
         this.props.handleBookmark(article_details);
         setTimeout(() => this.setState({
@@ -82,24 +72,27 @@ class Article extends Component {
             }
             const isBookMarked = this.props.bookmarked_articles.some(bookmark_article=>bookmark_article.id === response_data.id)
             return (
-                <div className='article_container'>
-                    <div>
-                        {isBookMarked
-                            ?<div onClick={() => this.removeBookmark(article_details)} className='bookmark_section'>
-                                <i className='fa fa-bookmark' aria-hidden='true'></i>
-                                <span>REMOVE BOOKMARK</span>
-                            </div>
-                            :<div onClick={() => this.addBookmark(article_details)} className='bookmark_section'>
-                                <i className='fa fa-bookmark' aria-hidden='true'></i>
-                                <span>ADD BOOKMARK</span>
-                            </div>
-                        }
-                        <p>{new Date(response_data.fields.lastModified).toISOString()}</p>
-                        <h1>{response_data.fields.headline}</h1>
-                        <h3>{response_data.fields.trailText}</h3>
+                <div>
+                    <div className='article_container'>
+                        <div>
+                            {isBookMarked
+                                ?<div onClick={() => this.handleBookmark(article_details, 'remove')} className='bookmark_section'>
+                                    <i className='fa fa-bookmark' aria-hidden='true'></i>
+                                    <span>REMOVE BOOKMARK</span>
+                                </div>
+                                :<div onClick={() => this.handleBookmark(article_details, 'add')} className='bookmark_section'>
+                                    <i className='fa fa-bookmark' aria-hidden='true'></i>
+                                    <span>ADD BOOKMARK</span>
+                                </div>
+                            }
+                            <p>{new Date(response_data.fields.lastModified).toISOString()}</p>
+                            <h1>{response_data.fields.headline}</h1>
+                            <h3>{response_data.fields.trailText}</h3>
+                        </div>
+                        {parse(response_data.fields.body)}
+                        {showStatus === 'add' ? <p className='add_bookmark'>Saved to Bookmark</p> : (showStatus === 'remove' ? <p className='remove_bookmark'>Removed from Bookmark</p> : null)}
                     </div>
-                    {parse(response_data.fields.body)}
-                    {showStatus === 'add' ? <p className='add_bookmark'>Saved to Bookmark</p> : (showStatus === 'remove' ? <p className='remove_bookmark'>Removed from Bookmark</p> : null)}
+                    <div className='footer_section'/>
                 </div>
             )
         }

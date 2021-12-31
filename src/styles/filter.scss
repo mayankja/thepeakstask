@@ -1,6 +1,9 @@
 .filter_container {
     display: flex;
     margin: 20px 0;
+    @media (max-width: 414px) {
+        display: block;
+    }
     h1 {
         font-size: 40px;
         margin: 0;
@@ -15,6 +18,10 @@
             padding: 7px 10px;
             border-radius: 5px;
             cursor: pointer;
+            @media (max-width: 320px) {
+                font-size: 13px;
+                width: 100%;
+            }
             span {
                 margin-left: 15px;
             }
@@ -23,6 +30,9 @@
             border: none;
             border-bottom: solid 2px #bcbcbc;
             width: 150px;
+            &:focus-visible {
+                outline: none;
+            }
         }
     }
 }

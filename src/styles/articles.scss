@@ -7,16 +7,25 @@
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
     grid-gap: 1rem;
+    @media screen and (max-width: 767px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
     .article_details {
         background: white;
         width: 370px;
         height: 400px;
         position: relative;
+        @media (max-width: 414px) {
+            width:100%;
+        }
         img {
             width: 370px;
             height: 400px;
             position: absolute;
             object-fit: cover;
+            @media (max-width: 414px) {
+                width:100%;
+            }
         }
         div {
             background: #143a79;

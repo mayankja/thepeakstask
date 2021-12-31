@@ -10,7 +10,7 @@ export default class Header extends Component {
         const { search_bar_active } = this.state;
         const { handleViewBookmark } = this.props;
         return (
-            <div className="container_header">
+            <div onClick={() => this.setState({search_bar_active: false})} className="container_header">
                 <h1 onClick={() => handleViewBookmark()}><Link to='/'>The Peacks</Link></h1>
                 <div style={{background: search_bar_active && '#2153a3'}} className="search_section">
                     {search_bar_active && <input onChange={(event) => this.props.handle_search(event.target.value)} type="search" />}

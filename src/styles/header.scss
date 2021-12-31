@@ -4,10 +4,19 @@
     align-items: baseline;
     padding: 0 50px;
     z-index: 99;
+    @media (max-width: 414px) {
+        padding: 0 20px;
+    }
     h1 {
         a {
             color: #fff;
-            text-decoration:none
+            text-decoration:none;
+            @media (max-width: 414px) {
+                font-size:27px;
+            }
+            @media (max-width: 320px) {
+                font-size:24px;
+            }
         }
     }
     .search_section {
@@ -20,6 +29,12 @@
             border-radius: 2px;
             border: none;
             background: transparent;
+            @media (max-width: 414px) {
+                width:115px;
+            }
+            @media (max-width: 320px) {
+                width:78px;
+            }
         }
         input:focus{
             outline: none;
